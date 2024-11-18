@@ -12,15 +12,10 @@
 
 
 function fill(array, value, start = 0, end = array.length) {
-    // for (let i = start; i < end; i++) {
-    //     array[i] = value
-    // }
-    // return array;
-
-    return array.slice(0, start)
-        .concat(Array(end - start).fill(value))
-        .concat(array.slice(end))
-
+    for (let i = start; i < end; i++) {
+        array[i] = value
+    }
+    return array;
 }
 
 console.log(fill([1, 2, 3], "a")); // ["a", "a", "a"]
