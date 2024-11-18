@@ -6,19 +6,20 @@
 
 
 function makeRug(m, n, proc = "#") {
-    // let result = [];
-    // for (let i = 0; i < m; i++) {
-    //     let str = "";
-    //     for (let j = 0; j < n; j++) {
-    //         str += proc
-    //     }
-    //     result.push(str);
-    // }
-    // return result
-
+    // forloop
     let result = [];
-    const row = proc.repeat(n)
-    return Array(m).fill(row);
+    for (let i = 0; i < m; i++) {
+        let pattern = ""
+        for (let j = 0; j < n; j++) {
+            pattern += proc
+        }
+        result.push(pattern)
+    }
+    return result
+
+    // methods
+    // return Array(m).fill("").map(() => proc.repeat(n))
+    // return Array.from({ length: m }, () => proc.repeat(n))
 }
 
 
