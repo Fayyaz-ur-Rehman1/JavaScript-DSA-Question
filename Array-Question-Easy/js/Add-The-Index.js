@@ -2,18 +2,21 @@
 
 
 function addIndexes(arr) {
-  // let result = [];
-  // for (let i = 0; i < arr.length; i++) {
-  //   result.push(arr[i] + i);
-  // }
-  // return result
 
-  // return arr.map((elm, i) => elm + i);
+    // // forloop
+    // let result = [];
+    // for (let i = 0; i < arr.length; i++) {
+    //     result.push(arr[i] + i);
+    // }
+    // return result
 
-  return arr.reduce((acc, cur, index) => {
-    acc.push(cur + index)
-    return acc
-  }, []);
+    // method
+
+    // return arr.map((elm, i) => elm + i)
+    return arr.reduce((acc, curr, index) => {
+        acc.push(curr + index);
+        return acc;
+    }, []);
 }
 
 console.log(addIndexes([0, 0, 0, 0, 0])); // [0, 1, 2, 3, 4]
