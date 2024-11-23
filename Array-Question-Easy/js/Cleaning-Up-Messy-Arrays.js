@@ -5,28 +5,24 @@
 // Return an empty array if there are no even numbers, or odd.
 
 function cleanUpArray(array) {
+    // forloop
+    // let even = [];
+    // let odd = [];
+    // for (let i = 0; i < array.length; i++) {
+    //     if (array[i] % 2 === 0) {
+    //         even.push(Number(array[i]));
+    //     } else {
+    //         odd.push(Number(array[i]));
+    //     }
+    // }
+    // return [even, odd];
 
-    // let evenArr = array.filter(e => e % 2 === 0);
-    // let oddArr = array.filter(e => e % 2 !== 0);
-    // return [evenArr, oddArr]
-
-
-    let evenArr = [];
-    let oddArr = [];
-
-    for (let i = 0; i < array.length; i++) {
-        let num = Number(array[i]);
-
-        if (num % 2 === 0) {
-            evenArr.push(num);
-        } else {
-            oddArr.push(num);
-        }
-    }
-
-    return [evenArr, oddArr];
+    // method
+    let elementNum = array.map(elm => Number(elm));
+    let even = elementNum.filter(elm => Number(elm) % 2 === 0); // Convert string to number and check for even
+    let odd = elementNum.filter(elm => Number(elm) % 2 !== 0); // Convert string to number and check for odd
+    return [even, odd];
 }
-
 console.log(cleanUpArray(["8"])); // [[8], []]
 console.log(cleanUpArray(["11"])); // [[], [11]]
 console.log(cleanUpArray(["7", "4", "8"]));  // [[4, 8], [7]]
