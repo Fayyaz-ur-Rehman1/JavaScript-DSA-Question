@@ -2,6 +2,7 @@
 
 
 function arrayLessThan100(array) {
+    // // loop
     // let sum = 0;
     // for (let i = 0; i < array.length; i++) {
     //     sum += array[i]
@@ -11,13 +12,21 @@ function arrayLessThan100(array) {
     // }
     // return false
 
-    let sum = array.reduce((a, b) => a + b, 0)
+    // method
+    // let total = array.reduce((a, b) => a + b, 0);
+    // return total < 100;
 
-    if (sum < 100) {
-        return true
-    }
-    return false
+    let total = 0;
+    // return array.every((num) => {
+    //     total += num
+    //     return total < 100;
+    // })
 
+    let isLessThan100 = !array.some((num) => {
+        total += num;
+        return total >= 100
+    })
+    return isLessThan100;
 }
 
 console.log(arrayLessThan100([5, 57])); // true
