@@ -25,9 +25,11 @@ function birthdayCakeCandles(array) {
     // }
     // return count
 
-    let count = 0;
-    let max = Math.max(...array);
-    return array.filter(elm => elm === max).length
+    // let count = 0;
+    // let max = Math.max(...array);
+    // return array.filter(elm => elm === max).length
+
+
 }
 
 console.log(birthdayCakeCandles([4, 4, 1, 3])); // 2
