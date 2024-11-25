@@ -3,23 +3,34 @@
 // If there is no difference in age between the parents, return "No age difference between spouses.". Otherwise, return the difference in years. Check the examples for more clarification.
 
 function ageDifference(ages) {
-    // Sort the array in descending order to find the two oldest ages (the parents)
-    let sortedAges = ages.sort((a, b) => b - a);
-    // Get the ages of the two oldest people (the parents)
-    let parent1 = sortedAges[0];
-    let parent2 = sortedAges[1];
-
-    // // Calculate the age difference between the two parents
-    let difference = Math.abs(parent1 - parent2);
-    // // Return the appropriate message
-    if (difference === 0) {
-        return "No age difference between spouses.";
-    } else if (difference === 1) {
-        return "1 year";
-    } else {
-        return difference + " years";
+    let maxAge = ages[0];
+    let secondMaxAge = -Infinity;
+    for (let i = 1; i < ages.length; i++) {
+        if (ages[i] > maxAge) {
+            secondMaxAge = maxAge;
+            maxAge = ages[i];
+        } else if (ages[i] > secondMaxAge) {
+            secondMaxAge = ages[i];
+        }
     }
 
+    let difference = maxAge - secondMaxAge;
+    if (difference === 0) {
+        return "No age difference between spouses.";
+    } else {
+        return `${difference} years`
+    }
+
+
+
+    // method
+    // let [parent1, parent2] = ages.sort((a, b) => b - a);
+    // let difference = parent1 - parent2;
+    // if (difference === 0) {
+    //     return "No age difference between spouses.";
+    // } else {
+    //     return `${difference} years`
+    // }
 }
 
 // Test cases
