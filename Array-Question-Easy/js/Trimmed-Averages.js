@@ -3,34 +3,27 @@
 
 
 function trimmedAverages(array) {
-    // let max = Math.max(...array);
-    // let min = Math.min(...array);
-    // let sum = 0;
-    // let count = 0;
-    // for (let i = 0; i < array.length; i++) {
-    //     if (array[i] !== max && array[i] !== min) {
-    //         sum += array[i];
-    //         count++
-    //     }
-    // }
-
-    // if (count === 0) {
-    //     return array[0];
-    // }
-
-    // let avg = sum / count
-    // return avg
-
-
-    let max = Math.max(...array);
-    let min = Math.min(...array);
-    let filter_Array = array.filter(elm => elm !== max && elm !== min);
-    if (filter_Array.length === 0) {
-        filter_Array = array
+    let min = +Infinity;
+    let max = -Infinity;
+    let sum = 0;
+    // forloop
+    for (let i = 0; i < array.length; i++) {
+        sum += array[i]
+        if (array[i] < min) min = array[i]
+        if (array[i] > max) max = array[i]
     }
-    let sum = filter_Array.reduce((acc, curr) => acc + curr, 0)
-    let avg = sum / filter_Array.length;
-    return avg
+    sum -= min
+    sum -= max
+
+    let remainingCount = array.length - 2;
+    return sum / remainingCount
+
+    // method
+    // let sortAsc = array.sort((a, b) => a - b);
+    // let removeMinMaxValue = sortAsc.slice(1, sortAsc.length - 1);
+    // let sum = removeMinMaxValue.reduce((total, num) => total + num, 0);
+    // let average = sum / removeMinMaxValue.length;
+    // return average
 }
 
 console.log(trimmedAverages([4, 5, 7, 100])); // 6
