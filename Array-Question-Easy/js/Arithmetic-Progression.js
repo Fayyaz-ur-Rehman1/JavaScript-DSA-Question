@@ -7,13 +7,19 @@
 
 
 function arithmeticProgression(first, diff, n) {
-    let sequence = [];
+    // let str = "";
+    // for (let i = 0; i < n; i++) {
+    //     str += first + diff * i + ","
+    // }
+    // return str
 
-    for (let i = 0; i < n; i++) {
-        sequence.push(first + i * diff);
-    }
+    // const sequence = Array.from({ length: n }, (_, i) => first + i * diff);
+    // return sequence.join(", ");
 
-    return sequence.join(', ');
+
+    return [...Array(n)]
+        .map((_, i) => first + i * diff)
+        .join(", ");
 }
 
 // Examples
