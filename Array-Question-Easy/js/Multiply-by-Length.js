@@ -15,9 +15,9 @@ function multiplyByLength(array) {
 
     let length = array.length;
     return array.reduce((acc, curr) => {
-       acc.push(curr * length);
-       return acc;
-    },[]);
+        acc.push(curr * length);
+        return acc;
+    }, []);
 }
 
 console.log(multiplyByLength([2, 3, 1, 0])); // [8, 12, 4, 0]
