@@ -24,7 +24,7 @@ function removeNull(array) {
     //     return result;
     // }, []);
 
-    // return array.flatMap(elm => (elm !== null ? [elm] : []));
+    // return array.flatMap(elm =>(elm !== null ? [elm] : []));
 
     for (let i = array.length - 1; i >= 0; i--) {
         if (array[i] === null) {
